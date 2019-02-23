@@ -1,4 +1,4 @@
-# Burger Buil
+# Burger Builder
 Simple Burger Builder App
 
 ## Run project with `npm start`
