@@ -16,20 +16,10 @@ class BurgerBuilder extends Component {
   // }
   state = {
     purchasing: false,
-    loading: false,
-    error: false,
   };
 
   componentDidMount() {
     console.log(this.props);
-    axios
-      .get('https://react-burger-builder-ms.firebaseio.com/ingredients.json')
-      .then(response => {
-        this.setState({ ingredients: response.data });
-      })
-      .catch(error => {
-        this.setState({ error: true });
-      });
   }
 
   updatePurchaseState(ingredients) {
@@ -92,10 +82,6 @@ class BurgerBuilder extends Component {
           purchaseContinued={this.purchaseContinueHandler}
         />
       );
-    }
-
-    if (this.state.loading) {
-      orderSummary = <Spinner />;
     }
 
     // {salad: true, meat: false, ...}
